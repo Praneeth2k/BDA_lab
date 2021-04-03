@@ -1,0 +1,3 @@
+{"_id":{"$oid":"60680661bb6ae79255d29762"},"name":"Arjun AS","rollNo":1.0,"age":21.0,"contactNo":8.439201243E+09,"email":"arjun861@gmail.com"}
+{"_id":{"$oid":"6068072abb6ae79255d29763"},"name":"Arun Teja","rollNo":10.0,"age":20.0,"contactNo":9.439321243E+09,"email":"aruncse@gmail.com"}
+{"_id":{"$oid":"6068072abb6ae79255d29764"},"name":"Aniruddh N Sringeri","rollNo":11.0,"age":20.0,"contactNo":9.743205341E+09,"email":"aniruddh.cs18@bmsce.ac.in"}

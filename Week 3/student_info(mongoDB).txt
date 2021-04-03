@@ -92,3 +92,41 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
         "contactNo" : 9743205341,
         "email" : "aniruddh.cs18@bmsce.ac.in"
 }
+
+C:\Users\Praneeth>mongoexport --collection=student_info --db=student --out=student_info.csv
+2021-04-03T12:30:30.168+0530    connected to: mongodb://localhost/
+2021-04-03T12:30:30.177+0530    exported 3 records
+
+> db.student_info.drop()
+true
+> db.student_info.find()
+
+C:\Users\Praneeth>mongoimport --db student --collection student_info --file C:\Users\Praneeth\Desktop\BDA\BDA_lab\student_info.csv
+2021-04-03T12:55:01.977+0530    connected to: mongodb://localhost/
+2021-04-03T12:55:04.009+0530    3 document(s) imported successfully. 0 document(s) failed to import.
+
+> db.student_info.find().pretty()
+{
+        "_id" : ObjectId("60680661bb6ae79255d29762"),
+        "name" : "Arjun AS",
+        "rollNo" : 1,
+        "age" : 21,
+        "contactNo" : 8439201243,
+        "email" : "arjun861@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29763"),
+        "name" : "Arun Teja",
+        "rollNo" : 10,
+        "age" : 20,
+        "contactNo" : 9439321243,
+        "email" : "aruncse@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29764"),
+        "name" : "Aniruddh N Sringeri",
+        "rollNo" : 11,
+        "age" : 20,
+        "contactNo" : 9743205341,
+        "email" : "aniruddh.cs18@bmsce.ac.in"
+}
