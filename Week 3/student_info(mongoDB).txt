@@ -1,0 +1,94 @@
+> use student
+switched to db student
+> db.student_info.insertOne({name: "Arjun AS", rollNo:001, age: 21, contactNo: 8439201243, email: "arjun861@gmail.com"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60680661bb6ae79255d29762")
+}
+> db.student_info.insertMany([{name: "Arun Teja", rollNo:10, age: 20, contactNo: 9439321243, email: "arunteja@gmail.com"}, {name:"Aniruddh NS", rollNo: 11, age: 20, contactNo: 9743205341, email: "aniruddh.cs18@bmsce.ac.in"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6068072abb6ae79255d29763"),
+                ObjectId("6068072abb6ae79255d29764")
+        ]
+}
+> db.student_info.find().pretty()
+{
+        "_id" : ObjectId("60680661bb6ae79255d29762"),
+        "name" : "Arjun AS",
+        "rollNo" : 1,
+        "age" : 21,
+        "contactNo" : 8439201243,
+        "email" : "arjun861@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29763"),
+        "name" : "Arun Teja",
+        "rollNo" : 10,
+        "age" : 20,
+        "contactNo" : 9439321243,
+        "email" : "arunteja@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29764"),
+        "name" : "Aniruddh NS",
+        "rollNo" : 11,
+        "age" : 20,
+        "contactNo" : 9743205341,
+        "email" : "aniruddh.cs18@bmsce.ac.in"
+}
+> db.student_info.update({ rollNo: 10 }, {$set: { email: "aruncse@gmail.com" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student_info.find().pretty()
+{
+        "_id" : ObjectId("60680661bb6ae79255d29762"),
+        "name" : "Arjun AS",
+        "rollNo" : 1,
+        "age" : 21,
+        "contactNo" : 8439201243,
+        "email" : "arjun861@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29763"),
+        "name" : "Arun Teja",
+        "rollNo" : 10,
+        "age" : 20,
+        "contactNo" : 9439321243,
+        "email" : "aruncse@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29764"),
+        "name" : "Aniruddh NS",
+        "rollNo" : 11,
+        "age" : 20,
+        "contactNo" : 9743205341,
+        "email" : "aniruddh.cs18@bmsce.ac.in"
+}
+> db.student_info.update({ rollNo: 11 }, {$set: { name: "Aniruddh N Sringeri" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student_info.find().pretty()
+{
+        "_id" : ObjectId("60680661bb6ae79255d29762"),
+        "name" : "Arjun AS",
+        "rollNo" : 1,
+        "age" : 21,
+        "contactNo" : 8439201243,
+        "email" : "arjun861@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29763"),
+        "name" : "Arun Teja",
+        "rollNo" : 10,
+        "age" : 20,
+        "contactNo" : 9439321243,
+        "email" : "aruncse@gmail.com"
+}
+{
+        "_id" : ObjectId("6068072abb6ae79255d29764"),
+        "name" : "Aniruddh N Sringeri",
+        "rollNo" : 11,
+        "age" : 20,
+        "contactNo" : 9743205341,
+        "email" : "aniruddh.cs18@bmsce.ac.in"
+}
