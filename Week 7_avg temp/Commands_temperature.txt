@@ -1,0 +1,23 @@
+#shell commands to execute average temperature hadoop MapReduce program 
+cd hadoop
+
+sbin/start-all.sh
+
+jps
+
+hdfs dfs -ls /
+
+
+hdfs dfs -mkdir /avgTemp_input_dir
+
+hdfs dfs -ls /
+
+hadoop fs -put /home/hdoop/Downloads/Week7_avgtemp/temperature_datset.txt /avgTemp_input_dir
+
+hdfs dfs -cat /avgTemp_input_dir/temperature_datset.txt     
+
+hadoop jar /home/hdoop/Downloads/Week7_avgtemp/avgtemp.jar temp.AverageDriver /avgTemp_input_dir/temperature_datset.txt /avgTemp_outputDir
+
+hdfs dfs -ls /avgTemp_outputDir
+
+hdfs dfs -cat /avgTemp_outputDir/part-r-00000
